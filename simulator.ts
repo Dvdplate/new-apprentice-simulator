@@ -22,7 +22,6 @@ namespace kBit {
         }
         robotType: string = "virtualType"
         constructor() {
-            kBit.utils.sendJSON({ "initialise": "true" })
             control.simmessages.onReceived(kBit.constants.CHANNEL_NAME, (buf)=>{
                 this.handleRobotMessage(buf)
             })

@@ -21,6 +21,9 @@ namespace apprenticeBot {
         "White",
         "Black"
     ]
+
+
+    spawnSimulatorWindow()
     
     /////////////////////   MOTOR BLOCKS  /////////////////////
 
@@ -166,5 +169,10 @@ namespace apprenticeBot {
     //% group="Sensor" weight=66
     export function photoresistorReading(): number {
         return kBit.ApprenticeBotDriver.photoresistorReading()
+    }
+
+    //% shim=TD_NOOP
+    function spawnSimulatorWindow() {
+        kBit.utils.sendJSON({ "initialise": "true" })
     }
 }
