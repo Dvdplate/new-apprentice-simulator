@@ -29,7 +29,7 @@ namespace apprenticeBot {
      * @param direction type of movement to make
      * @param speed how fast to make movement
      */
-    //% block="car $direction speed: $speed \\%"
+    //% block="car $carDirection speed: $speed \\%"
     //% speed.min=0 speed.max=100
     //% group="Motor" weight=99
     export function carRun(carDirection: kBit.enums.carDirection, speed: number) {
@@ -43,7 +43,7 @@ namespace apprenticeBot {
      * @param MD direction to move motor
      * @param speed speed to move motor
      */
-    //% block="$m motor run $md speed: $speed \\%"
+    //% block="$motor motor run $motorDirection speed: $speed \\%"
     //% speed.min=0 speed.max=100
     //% group="Motor" weight=97
     export function carMotorRun(motor: kBit.enums.motorChoice, direction: kBit.enums.motorDirection, speed: number) {
@@ -57,7 +57,7 @@ namespace apprenticeBot {
      * stop individual motors
      * @param M which motor to stop
      */
-    //% block="stop $m motor"
+    //% block="stop $motor motor"
     //% group="Motor" weight=96
     export function carMotorStop(motor: kBit.enums.motorChoice) {
         const motorChoice: string = motorChoiceIndexes[motor];
@@ -77,7 +77,7 @@ namespace apprenticeBot {
 
     /////////////////////   LIGHT BLOCKS  //////////////////
 
-    //% block="LED brightness $br"
+    //% block="LED brightness $brightness"
     //% br.min=0 br.max=255
     //% group="RGB-led" weight=79
     export function ledSetBrightness(brightness: number) {
@@ -88,7 +88,7 @@ namespace apprenticeBot {
      * set the rgb-led color via the color card
      * @param col color to make LED lights
      */
-    //% block="set RGBled $col"
+    //% block="set RGBled $colorIndex"
     //% group="RGB-led" weight=78
     export function ledSetColor(colorIndex: kBit.enums.colorSelection) {
         const color = colorChoicesIndexes[colorIndex]
@@ -120,7 +120,7 @@ namespace apprenticeBot {
      * infrared obstacle sensor
      * @param LR which infared sensor to use
      */
-    //% block="$lr obstacle sensor "
+    //% block="$sensor obstacle sensor "
     //% group="Sensor" weight=69
     export function lineSensorReading(sensor: kBit.enums.motorChoice): number {
         const sensorSide: string = motorChoiceIndexes[sensor];
@@ -131,7 +131,7 @@ namespace apprenticeBot {
      * individual infared line sensors
      * @param LR which infared sensor to use
      */
-    //% block="$lr line sensor "
+    //% block="$sensor line sensor "
     //% group="Sensor" weight=69
     export function obstacleSensorReading(sensor: kBit.enums.motorChoice): number {
         const sensorSide: string = motorChoiceIndexes[sensor];
