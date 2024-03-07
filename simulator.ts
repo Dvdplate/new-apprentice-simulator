@@ -105,10 +105,43 @@ namespace kBit {
         /*---------------------------------------------------
         LED Methods
         ----------------------------------------------------*/
-        ledSetBrightness(brightness: number) {}
-        ledSetColor(color: string) {}
-        ledSetRGBColor(red:number, green:number, blue:number) {}
-        ledTurnOff() {}
+        ledSetBrightness(brightness: number) {
+
+        }
+
+        ledSetColor(color: string) {
+            kBit.utils.sendJSON({
+                "command": {
+                    "type": "led",
+                    "assignment": "color",
+                    "value": color
+                }
+            });
+        }
+
+        ledSetRGBColor(red:number, green:number, blue:number) {
+            kBit.utils.sendJSON({
+                "command": {
+                    "type": "led",
+                    "assignment": "RGB",
+                    "value": {
+                        "R": red,
+                        "G": green,
+                        "B": blue,
+                    }
+                }
+            });
+        }
+
+        ledTurnOff() {
+            kBit.utils.sendJSON({
+                "command": {
+                    "type": "led",
+                    "assignment": "color",
+                    "value": "off"
+                }
+            });
+        }
         
 
         /*---------------------------------------------------
