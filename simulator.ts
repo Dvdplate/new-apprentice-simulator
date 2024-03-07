@@ -48,30 +48,32 @@ namespace kBit {
         Motor Methods
         ----------------------------------------------------*/
         carRun(direction: string, speed: number) {
+            const speed_value = Math.map(speed, 0, 100, 0, 4095);
             kBit.utils.sendJSON({
                 "command": {
                     "type": "move",
                     "state": "true",
                     "left": {
                         "direction": direction,
-                        "power": speed
+                        "power": speed_value
                     },
                     "right": {
                         "direction": direction,
-                        "power": speed
+                        "power": speed_value
                     }
                 }
             });
         }
         
         carMotorRun(motor: string, motorDirection: string, speed: number) {
+            const speed_value = Math.map(speed, 0, 100, 0, 4095);
             kBit.utils.sendJSON({
                 "command": {
                     "type": "move",
                     "state": "true",
                     motor: {
                         "direction": motorDirection,
-                        "power": speed
+                        "power": speed_value
                     }
                 }
             });
