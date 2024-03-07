@@ -171,7 +171,6 @@ namespace apprenticeBot {
         return kBit.ApprenticeBotDriver.photoresistorReading()
     }
 
-    //% shim=TD_NOOP
     function spawnSimulatorWindow() {
         kBit.utils.sendJSON({ "initialise": "true" })
     }
