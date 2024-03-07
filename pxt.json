@@ -7,7 +7,6 @@
         "microphone": "*"
     },
     "files": [
-        "main.ts",
         "README.md",
         "simulator.ts",
         "physical.ts",
