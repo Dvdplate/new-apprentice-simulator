@@ -96,7 +96,15 @@ namespace kBit {
             kBit.utils.sendJSON({
                 "command": {
                     "type": "move",
-                    "state": "false"
+                    "state": "true",
+                    "left": {
+                        "direction": "",
+                        "power": 0
+                    },
+                    "right": {
+                        "direction": "",
+                        "power": 0
+                    }
                 }
             });
         }
