@@ -46,7 +46,7 @@ namespace apprenticeBot {
      * @param MD direction to move motor
      * @param speed speed to move motor
      */
-    //% block="$motor motor run $motorDirection speed: $speed \\%"
+    //% block="$motor motor run $direction speed: $speed \\%"
     //% speed.min=0 speed.max=100
     //% group="Motor" weight=97
     export function carMotorRun(motor: kBit.enums.motorChoice, direction: kBit.enums.motorDirection, speed: number) {
