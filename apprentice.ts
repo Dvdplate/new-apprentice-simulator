@@ -10,8 +10,8 @@ namespace apprenticeBot {
     ]
 
     const motorChoiceIndexes = [
-        "forward",
-        "backward"
+        "left",
+        "right"
     ]
 
     const colorChoicesIndexes = [
