@@ -34,6 +34,10 @@ namespace kBit {
             }
             let data = JSON.parse(stringMsg)
 
+            // REMOVE LATER
+            console.log("data recieved from sim")
+            console.log(data)
+
             if (data.sensorData) {
                 if (data.sensorData.ultrasonicDistance != undefined) { this.sensorData.ultrasonicDistance = data.sensorData.ultrasonicDistance; }
                 if (data.sensorData.leftIRObstacleSensor != undefined) { this.sensorData.leftIRObstacleSensor = data.sensorData.leftIRObstacleSensor; }
