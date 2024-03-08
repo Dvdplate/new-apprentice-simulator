@@ -71,7 +71,7 @@ namespace kBit {
                 "command": {
                     "type": "move",
                     "state": "true",
-                    motor: {
+                    [motor]: {
                         "direction": motorDirection,
                         "power": speed_value
                     }
@@ -84,7 +84,7 @@ namespace kBit {
                 "command": {
                     "type": "move",
                     "state": "true",
-                    motor: {
+                    [motor]: {
                         "direction": "forward",
                         "power": 0
                     }
