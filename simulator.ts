@@ -39,12 +39,12 @@ namespace kBit {
             console.log(data)
 
             if (data.sensorData) {
-                if (data.sensorData.ultrasonicDistance != undefined) { this.sensorData.ultrasonicDistance = data.sensorData.ultrasonicDistance; }
-                if (data.sensorData.leftIRObstacleSensor != undefined) { this.sensorData.leftIRObstacleSensor = data.sensorData.leftIRObstacleSensor; }
-                if (data.sensorData.rightIRObstacleSensor != undefined) { this.sensorData.rightIRObstacleSensor = data.sensorData.rightIRObstacleSensor; }
-                if (data.sensorData.leftIRLineSensor != undefined) { this.sensorData.leftIRLineSensor = data.sensorData.leftIRLineSensor }
-                if (data.sensorData.rightIRLineSensor != undefined) { this.sensorData.rightIRLineSensor = data.sensorData.rightIRLineSensor }
-                if (data.sensorData.photoresistorReading != undefined) { this.sensorData.photoresistorReading = data.sensorData.photoresistorReading }
+                this.sensorData.ultrasonicDistance = data.sensorData.ultrasonicDistance;
+                this.sensorData.leftIRObstacleSensor = data.sensorData.leftIRObstacleSensor;
+                this.sensorData.rightIRObstacleSensor = data.sensorData.rightIRObstacleSensor;
+                this.sensorData.leftIRLineSensor = data.sensorData.leftIRLineSensor
+                this.sensorData.rightIRLineSensor = data.sensorData.rightIRLineSensor
+                this.sensorData.photoresistorReading = data.sensorData.photoresistorReading
             }
         }
 
