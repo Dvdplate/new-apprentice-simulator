@@ -51,19 +51,24 @@ namespace kBit {
             const speed_value = Math.map(speed, 0, 100, 0, 4095);
             let leftMotorDirection;
             let rightMotorDirection;
-            switch(direction) {
-                case "forward":
-                    leftMotorDirection = "forward"
-                    rightMotorDirection = "backward"
-                case "backward":
-                    leftMotorDirection = "backward"
-                    rightMotorDirection = "backward"
-                case "left":
-                    leftMotorDirection = "backward"
-                    rightMotorDirection = "forward"
-                case "right":
-                    leftMotorDirection = "forward"
-                    rightMotorDirection = "backward"
+            if (direction == "forward") {
+                leftMotorDirection = "forward"
+                rightMotorDirection = "backward"
+            }
+            else if (direction == "backward") {
+                leftMotorDirection = "backward"
+                rightMotorDirection = "backward"
+            }
+            else if (direction == "left") {
+                leftMotorDirection = "backward"
+                rightMotorDirection = "forward"
+            }
+            else if (direction == "right") {
+                leftMotorDirection = "forward"
+                rightMotorDirection = "backward"
+            }
+            else {
+                console.log(direction)
             }
             kBit.utils.sendJSON({
                 "command": {
