@@ -49,16 +49,32 @@ namespace kBit {
         ----------------------------------------------------*/
         carRun(direction: string, speed: number) {
             const speed_value = Math.map(speed, 0, 100, 0, 4095);
+            let leftMotorDirection;
+            let rightMotorDirection;
+            switch(direction) {
+                case "forward":
+                    leftMotorDirection = "forward"
+                    rightMotorDirection = "backward"
+                case "backward":
+                    leftMotorDirection = "backward"
+                    rightMotorDirection = "backward"
+                case "left":
+                    leftMotorDirection = "backward"
+                    rightMotorDirection = "forward"
+                case "right":
+                    leftMotorDirection = "forward"
+                    rightMotorDirection = "backward"
+            }
             kBit.utils.sendJSON({
                 "command": {
                     "type": "move",
                     "state": "true",
                     "left": {
-                        "direction": direction,
+                        "direction": leftMotorDirection,
                         "power": speed_value
                     },
                     "right": {
-                        "direction": direction,
+                        "direction": rightMotorDirection,
                         "power": speed_value
                     }
                 }
