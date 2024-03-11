@@ -11,17 +11,18 @@ namespace kBit {
 
     export class ApprenticeRobotSimulatorClass {
 
-        /* Default sensor values */
-        sensorData: SensorData = {
-            ultrasonicDistance: 52.34,
-            leftIRObstacleSensor: false,
-            rightIRObstacleSensor: false,
-            leftIRLineSensor: true,
-            rightIRLineSensor: true,
-            photoresistorReading: 150
-        }
+        public sensorData: SensorData;
         robotType: string = "virtualType"
+
         constructor() {
+            this.sensorData = {
+                ultrasonicDistance: 52.34,
+                leftIRObstacleSensor: false,
+                rightIRObstacleSensor: false,
+                leftIRLineSensor: false,
+                rightIRLineSensor: false,
+                photoresistorReading: 0,
+            };
             control.simmessages.onReceived(kBit.constants.CHANNEL_NAME, (buf)=>{
                 this.handleRobotMessage(buf)
             })
@@ -33,11 +34,6 @@ namespace kBit {
                 stringMsg += String.fromCharCode(buf[i]);
             }
             let data = JSON.parse(stringMsg)
-
-            // REMOVE LATER
-            console.log("data recieved from sim")
-            console.log(data)
-
             if (data.sensorData) {
                 this.sensorData.ultrasonicDistance = data.sensorData.ultrasonicDistance;
                 this.sensorData.leftIRObstacleSensor = data.sensorData.leftIRObstacleSensor;
