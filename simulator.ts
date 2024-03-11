@@ -35,12 +35,14 @@ namespace kBit {
             }
             let data = JSON.parse(stringMsg)
             if (data.sensorData) {
+                console.log("got data")
                 this.sensorData.ultrasonicDistance = data.sensorData.ultrasonicDistance;
                 this.sensorData.leftIRObstacleSensor = data.sensorData.leftIRObstacleSensor;
                 this.sensorData.rightIRObstacleSensor = data.sensorData.rightIRObstacleSensor;
                 this.sensorData.leftIRLineSensor = data.sensorData.leftIRLineSensor
                 this.sensorData.rightIRLineSensor = data.sensorData.rightIRLineSensor
                 this.sensorData.photoresistorReading = data.sensorData.photoresistorReading
+                console.log(this.sensorData)
             }
         }
 

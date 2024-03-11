@@ -8,13 +8,13 @@
     },
     "files": [
         "README.md",
+        "constants.ts",
+        "enums.ts",
+        "utils.ts",
         "simulator.ts",
         "physical.ts",
         "robotdriver.ts",
-        "constants.ts",
-        "apprentice.ts",
-        "utils.ts",
-        "enums.ts"
+        "apprentice.ts"
     ],
     "testFiles": [
         "test.ts"
