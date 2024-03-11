@@ -53,7 +53,7 @@ namespace kBit {
             let rightMotorDirection;
             if (direction == "forward") {
                 leftMotorDirection = "forward"
-                rightMotorDirection = "backward"
+                rightMotorDirection = "forward"
             }
             else if (direction == "backward") {
                 leftMotorDirection = "backward"
@@ -66,9 +66,6 @@ namespace kBit {
             else if (direction == "right") {
                 leftMotorDirection = "forward"
                 rightMotorDirection = "backward"
-            }
-            else {
-                console.log(direction)
             }
             kBit.utils.sendJSON({
                 "command": {
