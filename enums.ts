@@ -73,4 +73,4 @@ namespace kBit.enums {
 //         Hash = 74
 //     }
     
-// }
+}
