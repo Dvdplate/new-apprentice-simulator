@@ -19,9 +19,9 @@ namespace kBit {
                 ultrasonicDistance: 52.34,
                 leftIRObstacleSensor: false,
                 rightIRObstacleSensor: false,
-                leftIRLineSensor: false,
-                rightIRLineSensor: false,
-                photoresistorReading: 0,
+                leftIRLineSensor: true,
+                rightIRLineSensor: true,
+                photoresistorReading: 150,
             };
             control.simmessages.onReceived(kBit.constants.CHANNEL_NAME, (buf)=>{
                 this.handleRobotMessage(buf)
