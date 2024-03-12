@@ -120,10 +120,10 @@ namespace apprenticeBot {
     /////////////////////   SENSOR BLOCKS  /////////////////////
 
     /**
-     * infrared obstacle sensor
+     * individual infared line sensors
      * @param LR which infared sensor to use
      */
-    //% block="$sensor obstacle sensor "
+    //% block="$sensor line sensor "
     //% group="Sensor" weight=69
     export function lineSensorReading(sensor: kBit.enums.motorChoice): number {
         const sensorSide: string = motorChoiceIndexes[sensor];
@@ -131,10 +131,10 @@ namespace apprenticeBot {
     }
 
     /**
-     * individual infared line sensors
+     * infrared obstacle sensor
      * @param LR which infared sensor to use
      */
-    //% block="$sensor line sensor "
+    //% block="$sensor obstacle sensor "
     //% group="Sensor" weight=69
     export function obstacleSensorReading(sensor: kBit.enums.motorChoice): number {
         const sensorSide: string = motorChoiceIndexes[sensor];
