@@ -23,8 +23,8 @@ namespace kBit {
                 rightIRLineSensor: true,
                 photoresistorReading: 150,
             };
-            control.simmessages.onReceived(kBit.constants.CHANNEL_NAME, (buf)=>{
-                control.inBackground(function () {
+            control.inBackground(function () {
+                control.simmessages.onReceived(kBit.constants.CHANNEL_NAME, (buf) => {
                     this.handleRobotMessage(buf)
                 })
             })
