@@ -24,7 +24,9 @@ namespace kBit {
                 photoresistorReading: 150,
             };
             control.simmessages.onReceived(kBit.constants.CHANNEL_NAME, (buf)=>{
-                this.handleRobotMessage(buf)
+                control.inBackground(function () {
+                    this.handleRobotMessage(buf)
+                })
             })
         }
 
