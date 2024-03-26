@@ -202,6 +202,10 @@ namespace kBit {
         }
 
         readUltrasonicSensor(): number {
+            kBit.utils.sendDataUpdateRequest(this)
+            while (this.sensorData.ultrasonicDistance == null) {
+                basic.pause(1)
+            }
             return this.sensorData.ultrasonicDistance
         }
         

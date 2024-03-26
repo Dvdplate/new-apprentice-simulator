@@ -65,4 +65,17 @@ namespace kBit.utils {
             control.simmessages.send(kBit.constants.CHANNEL_NAME, buf)
         })
     }
+
+    //% shim=TD_NOOP
+    export function sendDataUpdateRequest(robotSimulator: any) {
+        
+        const json = {
+            "request": "sensorData"
+        }
+        control.inBackground(function () {
+            const msg = JSON.stringify(json)
+            const buf = Buffer.fromUTF8(msg);
+            control.simmessages.send(kBit.constants.CHANNEL_NAME, buf)
+        })
+    }
 }
