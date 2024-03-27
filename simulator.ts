@@ -176,17 +176,28 @@ namespace kBit {
         Sensor Methods
         ----------------------------------------------------*/
         readLineSensor(side: string): boolean {
+            while (this.sensorData.leftIRLineSensor == null && this.sensorData.rightIRLineSensor) {
+                basic.pause(1)
+            }
             return side == "right" ? 
                 this.sensorData.rightIRLineSensor : this.sensorData.leftIRLineSensor
         }
 
         readObstacleSensor(side: string): boolean {
-            return side == "right" ?
-                this.sensorData.rightIRObstacleSensor : this.sensorData.leftIRObstacleSensor
+            kBit.utils.sendDataUpdateRequest(this)
+            while (this.sensorData.leftIRObstacleSensor == null && this.sensorData.rightIRObstacleSensor) {
+                basic.pause(1)
+            }
+            return side == "right" ? this.sensorData.rightIRObstacleSensor : this.sensorData.leftIRObstacleSensor
         }
 
         // TODO: TEST FUNCTION AGGRESSIVELY
         lineTracking(): number {
+            kBit.utils.sendDataUpdateRequest(this)
+            while (this.sensorData.leftIRLineSensor == null && this.sensorData.rightIRLineSensor) {
+                basic.pause(1)
+            }
+
             const leftSensorValue = this.sensorData.leftIRLineSensor
             const rightSensorValue = this.sensorData.rightIRLineSensor
             
@@ -210,6 +221,10 @@ namespace kBit {
         }
         
         readPhotoresistorSensor(): number {
+            kBit.utils.sendDataUpdateRequest(this)
+            while (this.sensorData.photoresistorReading == null) {
+                basic.pause(1)
+            }
             return this.sensorData.photoresistorReading
         }
     }
