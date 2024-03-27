@@ -62,7 +62,7 @@ namespace kBit {
             return this.robot.readObstacleSensor(sensorSide) 
         }
         lineTrackingReading(): number { 
-            return this.robot.lineTrackingReading() 
+            return this.robot.lineTracking()
         }
         ultrasonicReading(): number { 
             return this.robot.readUltrasonicSensor() 
