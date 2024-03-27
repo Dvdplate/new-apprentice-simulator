@@ -69,6 +69,11 @@ namespace kBit.utils {
     //% shim=TD_NOOP
     export function sendDataUpdateRequest(robotSimulator: any) {
         robotSimulator.sensorData.ultrasonicDistance = null;
+        robotSimulator.sensorData.leftIRObstacleSensor = null;
+        robotSimulator.sensorData.rightIRObstacleSensor = null;
+        robotSimulator.sensorData.leftIRLineSensor = null;
+        robotSimulator.sensorData.rightIRLineSensor = null;
+        robotSimulator.sensorData.photoresistorReading = null;
         const json = {
             "request": "sensorData"
         }
